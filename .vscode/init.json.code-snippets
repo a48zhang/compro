@@ -1,0 +1,104 @@
+{
+	// Place your ccpp 工作区 snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	"std": {
+		"prefix": "stdtemp",
+		"body": [
+			"#include <bits/stdc++.h>",
+			"using namespace std;",
+			"typedef long long ll;",
+			"",
+			"int main()",
+			"{",
+			"    std::ios::sync_with_stdio(false);",
+			"    cin.tie(nullptr);",
+			"    int n;",
+			"    cin >> n;",
+			"    $0",
+			" ",
+			"    return 0;",
+			"}",
+		],
+		"description": "template for acm"
+	},
+	"defitl": {
+		"prefix": "#defitll",
+		"body": [
+			"#define int long long //signed main!",
+		],
+		"description": "int to long long"
+	},
+	"loopread": {
+		"prefix": "#defloop",
+		"body": [
+			"#define F(i,n,m) for(int i=n;i<=m;i++)",
+		],
+		"description": "define for loop"
+	},
+	"ioacc": {
+		"prefix": "ioacc",
+		"body": [
+			"std::ios::sync_with_stdio(false);",
+		],
+		"description": "faster io"
+	},
+	"typdefll": {
+		"prefix": "typdefll",
+		"body": [
+			"typedef long long ll;",
+		],
+		"description": "typedef ll"
+	},
+	"bcj": {
+		"prefix": "bcj",
+		"body": [
+			"class bcj",
+			"{",
+			"  public:",
+			"    int size;",
+			"    int *f;",
+			"    int find(int x);",
+			"    bool merge(int x, int y);",
+			"    bool can_merge(int x, int y);",
+			"    bcj(unsigned long long size)",
+			"    {",
+			"        if (size <= 0)",
+			"        {",
+			"            std::cerr << \"size must be over 1\";",
+			"            return;",
+			"        }",
+			"        this->size = size;",
+			"        f = (int *)malloc((size + 10) * sizeof(int));",
+			"        for (int i = 1; i <= size; i++)",
+			"            f[i] = i;",
+			"        return;",
+			"    }",
+			"};",
+			"int bcj::find(int x)",
+			"{",
+			"    return f[x] == x ? x : (f[x] = find(f[x]));",
+			"}",
+			"bool bcj::merge(int x, int y)",
+			"{",
+			"    int fx = bcj::find(x);",
+			"    int fy = bcj::find(y);",
+			"    if (fx != fy)",
+			"    {",
+			"        f[fx] = fy;",
+			"        return true;",
+			"    }",
+			"    return false;",
+			"}",
+			"bool bcj::can_merge(int x, int y)",
+			"{",
+			"    return bcj::find(x) != bcj::find(y);",
+			"}",
+		],
+		"description": "并查集板子"
+	}
+}
